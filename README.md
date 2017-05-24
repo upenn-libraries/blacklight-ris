@@ -1,4 +1,4 @@
-# Blacklight::Ris
+# blacklight-ris
 
 Adds "Download in RIS format" functionality to Blacklight
 
@@ -7,7 +7,7 @@ Adds "Download in RIS format" functionality to Blacklight
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'blacklight-ris', :path => '/home/jeffchiu/blacklight-ris' # TODO
+gem 'blacklight-ris', :git => 'https://github.com/upenn-libraries/blacklight-ris.git'
 ```
 
 And then execute:
@@ -23,7 +23,7 @@ and define your field mappings using the `ris_field_mappings` hash.
 ```ruby
 class SolrDocument
 
-  # ...
+  # ...existing code...
 
   include Blacklight::Solr::Document::RisFields
   use_extension(Blacklight::Solr::Document::RisExport)
@@ -59,7 +59,7 @@ includes.
 
 ```ruby
 class CatalogController < ApplicationController
-  # existing includes...
+  # ...existing includes...
   include Blacklight::Catalog
   
   # add this line
