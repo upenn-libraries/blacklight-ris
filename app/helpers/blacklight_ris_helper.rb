@@ -10,8 +10,8 @@ module BlacklightRisHelper
     end
   end
 
-  def render_ris
-    @document_list.map {|x| x.export_as(:ris)}.compact.join("\n")
+  def render_ris(documents)
+    documents.map {|x| x.export_as(:ris)}.compact.join("\n")
   end
 
 end
