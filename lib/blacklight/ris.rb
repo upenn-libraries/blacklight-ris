@@ -1,4 +1,3 @@
-
 require 'blacklight/ris/engine'
 
 module Blacklight

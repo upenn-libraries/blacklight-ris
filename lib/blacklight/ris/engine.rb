@@ -1,5 +1,5 @@
-module Blacklight
-  module Ris
+
+module Blacklight::Ris
     class Engine < ::Rails::Engine
       isolate_namespace Blacklight::Ris
 
@@ -8,9 +8,9 @@ module Blacklight
       end
 
       initializer 'blacklight-ris.helpers' do |app|
-        ActionView::Base.send :include, BlacklightRisHelper
+        config.after_initialize do
+          ActionView::Base.include BlacklightRisHelper
+        end
       end
-
     end
-  end
 end

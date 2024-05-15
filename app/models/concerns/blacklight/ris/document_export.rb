@@ -1,5 +1,5 @@
 
-module Blacklight::Solr::Document::RisExport
+module Blacklight::Ris::DocumentExport
 
   def self.extended(document)
     document.will_export_as(:ris, 'application/x-research-info-systems')
