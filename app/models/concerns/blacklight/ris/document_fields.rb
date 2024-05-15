@@ -1,5 +1,5 @@
 
-module Blacklight::Solr::Document::RisFields
+module Blacklight::Ris::DocumentFields
 
   extend ActiveSupport::Concern
 
