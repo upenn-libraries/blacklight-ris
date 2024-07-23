@@ -1,13 +1,19 @@
 # blacklight-ris
 
-Adds "Download in RIS format" functionality to Blacklight
+Adds "Download in RIS format" functionality to [Blacklight](https://github.com/projectblacklight/blacklight).
+
+## Description
+Blacklight plugin that adds the ability to download a [RIS representation](https://en.wikipedia.org/wiki/RIS_(file_format)) of a record from a catalog show page and a set of records from the bookmarks index page.
+
+### Versioning
+`v0.1.0` -> Known to work with Blacklight v6 and Rails 4
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'blacklight-ris', :git => 'https://github.com/upenn-libraries/blacklight-ris.git'
+gem 'blacklight-ris', '0.1.0'
 ```
 
 And then execute:
