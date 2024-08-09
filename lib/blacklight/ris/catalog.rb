@@ -7,13 +7,13 @@ module Blacklight::Ris
 
     included do
       # this also causes Blacklight's show endpoint to handle .ris
-      blacklight_config.add_show_tools_partial(:ris, label: 'Download in RIS format', if: :render_ris_action?, modal: false, path: :ris_path)
+      blacklight_config.add_show_tools_partial(:ris, label: I18n.t('blacklight.tools.ris'), if: :render_ris_action?, modal: false, path: :ris_path)
     end
 
     private
 
     def render_ris_action? config, options = {}
-      doc = options[:document] || (options[:document_list] || []).first
+      doc = options[:document] || (@response.documents || []).first
       doc && doc.respond_to?(:export_formats) && doc.export_formats.keys.include?(:ris )
     end
 
