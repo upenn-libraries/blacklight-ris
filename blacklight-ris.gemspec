@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails"
-  s.add_dependency "blacklight"
+  s.add_dependency "rails", '>= 7'
+  s.add_dependency "blacklight",  '>= 7'
 
   s.metadata['rubygems_mfa_required'] = 'false'
 end

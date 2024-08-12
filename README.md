@@ -8,6 +8,8 @@ Blacklight plugin that adds the ability to download a [RIS representation](https
 ### Versioning
 `v0.1.0` -> Known to work with Blacklight v6 and Rails 4
 
+`v0.2.0` -> Known to work with Blacklight v8 and Rails 7 (untested with Blacklight v7 but might work)
+
 ## Installation
 
 Add this line to your application's Gemfile:
