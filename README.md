@@ -15,7 +15,7 @@ Blacklight plugin that adds the ability to download a [RIS representation](https
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'blacklight-ris', '0.1.0'
+gem 'blacklight-ris'
 ```
 
 And then execute:
