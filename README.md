@@ -8,12 +8,14 @@ Blacklight plugin that adds the ability to download a [RIS representation](https
 ### Versioning
 `v0.1.0` -> Known to work with Blacklight v6 and Rails 4
 
+`v0.2.0` -> Known to work with Blacklight v8 and Rails 7 (untested with Blacklight v7 but might work)
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'blacklight-ris', '0.1.0'
+gem 'blacklight-ris'
 ```
 
 And then execute:
@@ -31,8 +33,8 @@ class SolrDocument
 
   # ...existing code...
 
-  include Blacklight::Solr::Document::RisFields
-  use_extension(Blacklight::Solr::Document::RisExport)
+  include Blacklight::Ris::DocumentFields
+  use_extension(Blacklight::Ris:DocumentExport)
 
   ris_field_mappings.merge!(
     # Procs are evaluated in context of SolrDocument instance

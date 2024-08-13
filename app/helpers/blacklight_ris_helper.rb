@@ -4,9 +4,9 @@ module BlacklightRisHelper
   # this helper is called from the Show view and Bookmarks view
   def ris_path(opts = {})
     if controller_name == "bookmarks"
-      bookmarks_path(opts.merge(format: 'ris'))
+      bookmarks_path(format: 'ris')
     else
-      solr_document_path(opts.merge(format: 'ris'))
+      solr_document_path(format: 'ris')
     end
   end
 
