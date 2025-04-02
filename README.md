@@ -34,31 +34,30 @@ class SolrDocument
   # ...existing code...
 
   include Blacklight::Ris::DocumentFields
-  use_extension(Blacklight::Ris:DocumentExport)
-
-  ris_field_mappings.merge!(
-    # Procs are evaluated in context of SolrDocument instance
-    :TY => Proc.new {
-      format = fetch('format_a', [])
-      if format.member?('Book')
-        'BOOK'
-      elsif format.member?('Journal/Periodical')
-        'JOUR'
-      else
-        'GEN'
-      end
-    },
-    # use solr field named 'title'
-    :TI => 'title',
-    :AU => 'author_creator_a',
-    :PY => 'publication_date_a',
-    # this assumes you're using blacklight-marc
-    :CY => Proc.new { marclibrary.get_ris_cy_field(to_marc) },
-    :PB => Proc.new { marclibrary.get_ris_pb_field(to_marc) },
-    :ET => 'edition',
-    :SN => Proc.new { marclibrary.get_ris_sn_field(to_marc) },
-  )
-end
+  use_extension(Blacklight::Ris::DocumentExport) do
+    ris_field_mappings.merge!(
+      # Procs are evaluated in context of SolrDocument instance
+      :TY => Proc.new {
+        format = fetch('format_a', [])
+        if format.member?('Book')
+          'BOOK'
+        elsif format.member?('Journal/Periodical')
+          'JOUR'
+        else
+          'GEN'
+        end
+      },
+      # use solr field named 'title'
+      :TI => 'title',
+      :AU => 'author_creator_a',
+      :PY => 'publication_date_a',
+      # this assumes you're using blacklight-marc
+      :CY => Proc.new { marclibrary.get_ris_cy_field(to_marc) },
+      :PB => Proc.new { marclibrary.get_ris_pb_field(to_marc) },
+      :ET => 'edition',
+      :SN => Proc.new { marclibrary.get_ris_sn_field(to_marc) },
+    )
+  end
 ```
 
 Modify your `CatalogController` to include the
